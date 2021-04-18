@@ -183,7 +183,7 @@ color: rgb(27, 36, 156);
      <string>Don't have an account?</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="createaccButton">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -211,7 +211,7 @@ background-color: rgb(227, 180, 180);</string>
    <zorder>layoutWidget</zorder>
    <zorder>BOOKALL_2</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>createaccButton</zorder>
   </widget>
  </widget>
  <resources/>
