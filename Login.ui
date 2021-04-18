@@ -160,9 +160,58 @@ color: rgb(27, 36, 156);
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>480</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(45, 64, 88);</string>
+    </property>
+    <property name="text">
+     <string>Don't have an account?</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>490</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(136, 0, 0);
+background-color: rgb(227, 180, 180);</string>
+    </property>
+    <property name="text">
+     <string>Create Account</string>
+    </property>
+   </widget>
    <zorder>frame</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>BOOKALL_2</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton</zorder>
   </widget>
  </widget>
  <resources/>
