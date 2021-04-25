@@ -26,19 +26,7 @@ class HomeScreen(QDialog):
         self.AttractionsButton.clicked.connect(self.searchForm)
         self.RestaurantsButton.clicked.connect(self.searchForm)
         self.TransportButton.clicked.connect(self.searchForm)
-
-
         print("value Changed")
 
     def searchForm(self):
         print("Main Button Clicked")    
-
-
-app = QApplication(sys.argv)
-mainwindow = HomeScreen()
-widget = QtWidgets.QStackedWidget()
-widget.addWidget(mainwindow)
-widget.setFixedWidth(421)
-widget.setFixedHeight(730)
-widget.show()
-app.exec_()

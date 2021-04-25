@@ -250,15 +250,15 @@ background-color: rgb(188, 218, 255);</string>
 background-color: rgb(188, 218, 255);</string>
      </property>
      <property name="text">
-      <string>Buisnessman</string>
+      <string>Businessman</string>
      </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="signupbutton">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>640</y>
+      <x>70</x>
+      <y>650</y>
       <width>307</width>
       <height>27</height>
      </rect>
@@ -281,28 +281,55 @@ background-color: rgb(227, 180, 180);</string>
    <widget class="QLabel" name="diffpasswords">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>140</x>
       <y>570</y>
-      <width>281</width>
-      <height>31</height>
+      <width>231</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>9</pointsize>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(150, 0, 0);</string>
+     <string notr="true">color: rgb(59, 66, 108);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Already a user?</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="gotologinButton">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>570</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(136, 0, 0);
+background-color: rgb(227, 180, 180);</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
     </property>
    </widget>
    <zorder>frame</zorder>
    <zorder>BOOKALL_2</zorder>
    <zorder>signupbutton</zorder>
    <zorder>diffpasswords</zorder>
+   <zorder>gotologinButton</zorder>
   </widget>
  </widget>
  <resources/>

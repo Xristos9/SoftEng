@@ -310,7 +310,7 @@ color: rgb(170, 85, 127);</string>
      </row>
      <column>
       <property name="text">
-       <string>Result Header</string>
+       <string>Service</string>
       </property>
       <property name="font">
        <font>
@@ -377,7 +377,7 @@ color: rgb(170, 85, 127);</string>
      </row>
      <column>
       <property name="text">
-       <string>Result Header</string>
+       <string>Service</string>
       </property>
       <property name="font">
        <font>
@@ -444,7 +444,7 @@ color: rgb(170, 85, 127);</string>
      </row>
      <column>
       <property name="text">
-       <string>Result Header</string>
+       <string>Service</string>
       </property>
       <property name="font">
        <font>

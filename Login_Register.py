@@ -1,6 +1,12 @@
 import sys
+import hashlib
+import demo as dm
+import HomeScreen as hs
+import hashingPassword as hp
+from Connector import mydb
+from PyQt5.QtCore import *
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
 
 class Login(QDialog):
@@ -8,63 +14,117 @@ class Login(QDialog):
         super(Login,self).__init__()
         loadUi("login.ui", self)
         self.loginbutton.clicked.connect(self.loginfunction)
-        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.password.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.createaccButton.clicked.connect(self.gotocreate)
         # connects the button with a function
-
-
 
     def loginfunction(self):
         username = self.username.text()
         password = self.password.text()
-        #connect with database here
-        print("Successfully logged in with username: ", username, "and password :", password)
+        cursor = mydb.cursor()# connect with database here
+        exists = '''SELECT COUNT(*) FROM users WHERE Usersusername = %s'''
+        cursor.execute(exists, (username, ))
+        count = cursor.fetchone()
 
+        if count[0] == 0:
+        	QMessageBox.about(self, "Error", "Username does not exist!")
+        else:
+        	word = '''SELECT Userspwd FROM users WHERE Usersusername = %s'''
+        	cursor.execute(word, (username, ))
+        	storedPass = cursor.fetchone()
+        	if hp.verify_password(storedPass[0], password):
+        		print('success')
+        		self.gotoHomeScreen()
+        
     def gotocreate(self):
     	createacc = CreateAcc()
     	widget.addWidget(createacc)
-    	widget.setCurrentIndex(widget.currentIndex() + 1)	
+    	index = widget.currentIndex()
+    	print(widget.currentIndex())
+    	widget.setCurrentIndex(index + 1)
+
+    def gotoHomeScreen(self):
+    	homescreen = hs.HomeScreen()
+    	widget.addWidget(homescreen)
+    	index = widget.currentIndex()
+    	widget.setCurrentIndex(index + 2)
 
 class CreateAcc(QDialog):
 	def __init__(self):
 		super(CreateAcc, self).__init__()
 		loadUi("Register.ui", self)
-		self.signupbutton.clicked.connect(self.createaccfunction)
+		self.signupbutton.clicked.connect(self.registration)
+		self.gotologinButton.clicked.connect(self.gotologin)
+		self.password.setEchoMode(QtWidgets.QLineEdit.Password) 
+		self.repeatpassword.setEchoMode(QtWidgets.QLineEdit.Password) 
+		
 		#Checkboxes
-        self.chechBox.stateChanged.connect(self.checked)
-        self.chechBox2.stateChanged.connect(self.checked)
+		self.checkBox.stateChanged.connect(self.uncheck)
+		self.checkBox2.stateChanged.connect(self.uncheck)
 
-	def createaccfunction(self):
-		username = self.username.text()
-		email = self.email.text()
+	def registration(self):
+		username = self.username.text() #username from register form
+		email = self.email.text() #email from register form
+		password = self.password.text()
+		repeatpassword = self.repeatpassword.text()
 
-		#connect with database here
-		if self.password.text() == self.repeatpassword.text():
-			password = self.password.text()
-			print("Successfully created an Account with username: ", username, "and password:", password )
-			self.diffpasswords.setText("Successfully created an Account!") 
-			# function setText changes Label in Qt
-			self.username.setReadOnly(True)
-			self.password.setReadOnly(True)
-			self.repeatpassword.setReadOnly(True)
-			self.email.setReadOnly(True)
-			self.username.setDisabled(True)
-			self.password.setDisabled(True)
-			self.repeatpassword.setDisabled(True)
-			self.email.setDisabled(True)
+		cursor = mydb.cursor()# connect with database here
+		exists = '''SELECT COUNT(*) FROM users WHERE Usersusername = %s OR Usersemail = %s'''
+		cursor.execute(exists, (username, email))
+		count = cursor.fetchone()
+
+		print(type(count[0]))
+		print(count[0] == 1)
+		print(count[0] == 0)
+
+		if count[0] == 1:
+			QMessageBox.about(self, "Error", "Username or email already exists")
 		else:
-		    self.diffpasswords.setText("Passwords don't match!")
+			if dm.check_blank(username,email,password,repeatpassword) != True or (self.checkBox.isChecked() == False and self.checkBox2.isChecked() == False):
+				QMessageBox.about(self, "Error", "Fill all the lines and Checkboxes")
+			else:
+				if password != repeatpassword:
+					QMessageBox.about(self, "Error", "Password don't match!")
+				elif dm.checker(password) != True:
+					QMessageBox.about(self, "Error", "Password must contain at least 8 characters, one number, one capital and a special character.")
+				else:  
+		  			password_hash = hp.hash_password(password)# utf-8
+		  			insert = '''INSERT INTO users(Usersusername, Usersemail, Userspwd) VALUES('{}', '{}', '{}')'''.format(username,email,password_hash)#alternative way of structing sql INSERT query
+		  			cursor.execute(insert) 
+		  			mydb.commit() #only for INSERT
+		  			
+		  			select = '''SELECT UsersId FROM users WHERE Usersusername = %s''' 
+		  			cursor.execute(select, (username,)) # username passes to %s as a string
+		  			result = cursor.fetchone() #user Id to result (tuple)
 
-	def checked(self): #Either a user or a buisnessman creates an account
-		if self.checkBox.isChecked():
-			print("User checkBox is checked ")
+		  			if self.checkBox.isChecked():
+		  				cursor.execute('''INSERT INTO user_roles(user_id, role_id) VALUES (%d, 0) ''' %result)
+		  				mydb.commit() #result is a tuple with one integer element and passes as a digit number with %d
+		  			elif self.checkBox2.isChecked():
+		  				cursor.execute('''INSERT INTO user_roles(user_id, role_id) VALUES (%d, 1) ''' %result)
+		  				mydb.commit()
 
-		if self.checkBox2.isChecked():	   
-			print("Buisnessman checkBox is checked" ) 
+		  			self.gotologin()
+	
+	def uncheck(self, state): #Explaination
+		if state == Qt.Checked:
+			if self.sender() == self.checkBox:
+				self.checkBox2.setChecked(False)
+			elif self.sender() == self.checkBox2:
+				self.checkBox.setChecked(False)	
+
+	def gotologin(self):
+		login = Login()
+		widget.addWidget(login)
+		index = widget.currentIndex
+		print(widget.currentIndex())
+		widget.setCurrentIndex(widget.currentIndex() + 1)
+		
 
 app = QApplication(sys.argv)
 mainwindow = Login()
 widget = QtWidgets.QStackedWidget()
+print(type(widget))
 widget.addWidget(mainwindow)
 widget.setFixedWidth(421)
 widget.setFixedHeight(721)
