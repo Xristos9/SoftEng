@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>421</width>
     <height>721</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
+     <width>421</width>
      <height>731</height>
     </rect>
    </property>
@@ -45,39 +45,16 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>399</width>
+      <width>419</width>
       <height>729</height>
      </rect>
     </property>
-    <widget class="QLineEdit" name="Search">
-     <property name="geometry">
-      <rect>
-       <x>272</x>
-       <y>10</y>
-       <width>121</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Reference Sans Serif</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(60, 92, 140);
-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>Search...</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="FlightsButton">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>180</y>
-       <width>141</width>
+       <width>151</width>
        <height>41</height>
       </rect>
      </property>
@@ -100,7 +77,7 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="RestaurantsButton">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>290</x>
        <y>120</y>
        <width>131</width>
        <height>41</height>
@@ -125,9 +102,9 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="TransportButton">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>150</x>
        <y>180</y>
-       <width>131</width>
+       <width>141</width>
        <height>41</height>
       </rect>
      </property>
@@ -150,9 +127,9 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="AttractionsButton">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>150</x>
        <y>120</y>
-       <width>131</width>
+       <width>141</width>
        <height>41</height>
       </rect>
      </property>
@@ -175,9 +152,9 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="ForumsButton">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>290</x>
        <y>180</y>
-       <width>141</width>
+       <width>131</width>
        <height>41</height>
       </rect>
      </property>
@@ -202,7 +179,7 @@ color: rgb(255, 255, 255);</string>
       <rect>
        <x>0</x>
        <y>670</y>
-       <width>101</width>
+       <width>111</width>
        <height>51</height>
       </rect>
      </property>
@@ -232,7 +209,7 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="SearchButton">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>110</x>
        <y>670</y>
        <width>101</width>
        <height>51</height>
@@ -264,9 +241,9 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="ProfileButton">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>310</x>
        <y>670</y>
-       <width>101</width>
+       <width>111</width>
        <height>51</height>
       </rect>
      </property>
@@ -296,7 +273,7 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="FavoritesButton">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>210</x>
        <y>670</y>
        <width>101</width>
        <height>51</height>
@@ -357,7 +334,7 @@ color: rgb(27, 36, 156);
       <rect>
        <x>20</x>
        <y>250</y>
-       <width>361</width>
+       <width>381</width>
        <height>411</height>
       </rect>
      </property>
@@ -389,7 +366,7 @@ color: rgb(41, 75, 117);
       <rect>
        <x>0</x>
        <y>120</y>
-       <width>141</width>
+       <width>151</width>
        <height>41</height>
       </rect>
      </property>
@@ -414,7 +391,7 @@ color: rgb(255, 255, 255);</string>
       <rect>
        <x>30</x>
        <y>280</y>
-       <width>341</width>
+       <width>361</width>
        <height>121</height>
       </rect>
      </property>
@@ -441,7 +418,7 @@ background-color: rgb(206, 255, 217);</string>
       <rect>
        <x>30</x>
        <y>410</y>
-       <width>341</width>
+       <width>361</width>
        <height>111</height>
       </rect>
      </property>
@@ -468,7 +445,7 @@ background-color: rgb(206, 255, 217);</string>
       <rect>
        <x>30</x>
        <y>530</y>
-       <width>341</width>
+       <width>361</width>
        <height>121</height>
       </rect>
      </property>
@@ -495,15 +472,21 @@ background-color: rgb(206, 255, 217);</string>
       <rect>
        <x>0</x>
        <y>160</y>
-       <width>141</width>
+       <width>151</width>
        <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 170, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(48, 76, 118);
 color: rgb(255, 255, 255);</string>
      </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
      <item>
       <property name="text">
        <string>Hotels</string>
@@ -528,17 +511,23 @@ color: rgb(255, 255, 255);</string>
     <widget class="QComboBox" name="comboBoxAttractions">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>150</x>
        <y>160</y>
-       <width>131</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 170, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(48, 76, 118);
 color: rgb(255, 255, 255);</string>
      </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
      <item>
       <property name="text">
        <string>Museums</string>
@@ -553,17 +542,37 @@ color: rgb(255, 255, 255);</string>
     <widget class="QComboBox" name="comboBoxRestaurants">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>290</x>
        <y>160</y>
        <width>131</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 170, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(48, 76, 118);
 color: rgb(255, 255, 255);</string>
      </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cafe</string>
+      </property>
+     </item>
      <item>
       <property name="text">
        <string>Fast Food</string>
@@ -578,17 +587,23 @@ color: rgb(255, 255, 255);</string>
     <widget class="QComboBox" name="comboBoxTransport">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>150</x>
        <y>220</y>
-       <width>131</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 170, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(48, 76, 118);
 color: rgb(255, 255, 255);</string>
      </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
      <item>
       <property name="text">
        <string>Taxi</string>
@@ -607,7 +622,6 @@ color: rgb(255, 255, 255);</string>
     </widget>
     <zorder>ProfileButton</zorder>
     <zorder>ForumsButton</zorder>
-    <zorder>Search</zorder>
     <zorder>FavoritesButton</zorder>
     <zorder>SearchButton</zorder>
     <zorder>HomeButton</zorder>

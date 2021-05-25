@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>415</width>
-    <height>732</height>
+    <height>719</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@ color: rgb(255, 255, 255);</string>
      <x>-1</x>
      <y>-1</y>
      <width>421</width>
-     <height>741</height>
+     <height>721</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -59,7 +59,7 @@ color: rgb(255, 255, 255);</string>
       <x>0</x>
       <y>0</y>
       <width>419</width>
-      <height>739</height>
+      <height>719</height>
      </rect>
     </property>
     <widget class="QListWidget" name="listWidget_3">
@@ -98,7 +98,7 @@ color: rgb(41, 75, 117);
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>680</y>
+       <y>670</y>
        <width>111</width>
        <height>51</height>
       </rect>
@@ -130,7 +130,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>680</y>
+       <y>670</y>
        <width>101</width>
        <height>51</height>
       </rect>
@@ -162,7 +162,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>680</y>
+       <y>670</y>
        <width>101</width>
        <height>51</height>
       </rect>
@@ -194,7 +194,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>310</x>
-       <y>680</y>
+       <y>670</y>
        <width>111</width>
        <height>51</height>
       </rect>
@@ -225,8 +225,8 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="BOOKALL_2">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>50</y>
+       <x>140</x>
+       <y>40</y>
        <width>171</width>
        <height>51</height>
       </rect>
@@ -254,7 +254,7 @@ color: rgb(27, 36, 156);
       <rect>
        <x>40</x>
        <y>230</y>
-       <width>141</width>
+       <width>161</width>
        <height>171</height>
       </rect>
      </property>
@@ -279,9 +279,9 @@ background-color: rgb(206, 255, 217);</string>
     <widget class="QPushButton" name="pushButton_8">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>210</x>
        <y>230</y>
-       <width>141</width>
+       <width>161</width>
        <height>171</height>
       </rect>
      </property>
@@ -307,8 +307,8 @@ background-color: rgb(217, 240, 255);</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>430</y>
-       <width>141</width>
+       <y>410</y>
+       <width>161</width>
        <height>171</height>
       </rect>
      </property>
@@ -333,9 +333,9 @@ background-color: rgb(255, 208, 169);</string>
     <widget class="QPushButton" name="pushButton_10">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>430</y>
-       <width>141</width>
+       <x>210</x>
+       <y>410</y>
+       <width>161</width>
        <height>171</height>
       </rect>
      </property>
@@ -361,9 +361,9 @@ background-color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>620</y>
-       <width>101</width>
-       <height>31</height>
+       <y>600</y>
+       <width>111</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
@@ -381,27 +381,27 @@ background-color: rgb(255, 255, 255);</string>
       <string>+ Add More</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="BackButton">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>81</width>
+       <width>91</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>12</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(144, 0, 0);</string>
+      <string notr="true">color: rgb(150, 48, 48);</string>
      </property>
      <property name="text">
-      <string>&lt;-  BACK</string>
+      <string>&lt;-- Back </string>
      </property>
     </widget>
     <zorder>listWidget_3</zorder>
@@ -415,7 +415,7 @@ background-color: rgb(255, 255, 255);</string>
     <zorder>pushButton_9</zorder>
     <zorder>pushButton_10</zorder>
     <zorder>pushButton</zorder>
-    <zorder>pushButton_2</zorder>
+    <zorder>BackButton</zorder>
    </widget>
   </widget>
   <zorder>scrollArea</zorder>
